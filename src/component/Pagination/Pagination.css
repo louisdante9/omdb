@@ -1,0 +1,14 @@
+/* pagination */
+
+.pagination button {
+    width: 70px;
+    height: 20px;
+    background-color: none;
+    border: none;
+    margin-right: 1px;
+    cursor: pointer;
+}
+.pagination button:hover:enabled {
+    background-color: #333333;
+    color: #ffffff;
+}

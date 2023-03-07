@@ -1,13 +1,13 @@
-export const formReducer = (state, event) => {
-    if(event.reset) {
-        return {
-            title: '',
-             year: '', 
-             genre: ''
-        }
-    }
+export function formReducer(state, event) {
+  if (event.reset) {
     return {
-      ...state,
-      [event.name]: event.value
-    }
+      title: "",
+      year: "",
+      genre: "",
+    };
   }
+  return {
+    ...state,
+    [event.name]: event.value,
+  };
+}

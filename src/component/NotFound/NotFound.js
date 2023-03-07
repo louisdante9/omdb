@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-export function NotFound({notFound}) {
-    return (
-        <div className='not__found'>{notFound}</div>
-    )
+import "./NotFound.css";
+
+export function NotFound({ notFound }) {
+  return <div className="not__found">{notFound}</div>;
 }
 
 NotFound.propTypes = {
-    notFound: PropTypes.string
-}
+  notFound: PropTypes.string,
+};

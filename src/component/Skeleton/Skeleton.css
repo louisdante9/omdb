@@ -1,0 +1,43 @@
+/* skeleton */
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(192, 7%, 86%);
+    }
+
+    100% {
+        background-color: hsl(192, 7%, 86%);
+    }
+}
+
+.poster-image-placeholder img {
+    height: 300px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.movie-details-placeholder div {
+    height: 20px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+/* fallback */
+
+.fallback-img {
+    height: 240px;
+    max-width: 203px;
+    border-radius: 5px;
+    background-color: #f9f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
