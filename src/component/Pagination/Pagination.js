@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export function Pagination({ page, totalPage, handlePageClick }) {
     return (
         <div className="pagination">
@@ -28,4 +30,10 @@ export function Pagination({ page, totalPage, handlePageClick }) {
         </div>
     )
 
+}
+
+Pagination.propTypes = {
+    page: PropTypes.number,
+    totalPage: PropTypes.number,
+    handlePageClick: PropTypes.func
 }

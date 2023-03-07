@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export function MovieInfo(props) {
       
     return (
@@ -42,3 +44,21 @@ export function MovieInfo(props) {
     )
   }
 
+  MovieInfo.propTypes = {
+    props: PropTypes.shape({
+      closePop: PropTypes.func,
+      Poster: PropTypes.string,
+      Title: PropTypes.string,
+      Country: PropTypes.string,
+      Year: PropTypes.string,
+      Rated: PropTypes.string,
+      Genre: PropTypes.string,
+      Plot: PropTypes.string,
+      Production: PropTypes.string,
+      Runtime: PropTypes.string,
+      imdbRating: PropTypes.string,
+      Director: PropTypes.string,
+      Actors: PropTypes.string,
+      BoxOffice: PropTypes.string,
+    })
+  }

@@ -1,4 +1,5 @@
 import useMediaQuery from "../../hooks/useMediaQuery";
+import PropTypes from 'prop-types'
 import { Button } from "../Button";
 
 export function Search({ formData: { title, year }, handleChange, handldeSubmit }) {
@@ -39,4 +40,11 @@ export function Search({ formData: { title, year }, handleChange, handldeSubmit 
         </div>
 
     )
+}
+
+Search.propTypes = {
+    title: PropTypes.string,
+    year: PropTypes.string,
+    handleChange: PropTypes.func,
+    handldeSubmit: PropTypes.func
 }

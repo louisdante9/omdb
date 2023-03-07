@@ -21,6 +21,7 @@ function App() {
   const [showPop, setShowPop] = useState(false);
   const [movie, setMovie] = useState({});
   const [error, setError] = useState(null)
+  const [notFound, setNotFound] = useState('')
   const [loading, setLoading] = useState(false);
 
   const handleChange = event => {
@@ -36,10 +37,16 @@ function App() {
 
     if (!formData.title) return
     setLoading(true)
+    setNotFound('')
 
     const { data, error } = await fetchMovies(title, year, genre, page);
 
     if (data) {
+      if(data.Error) {
+         setNotFound(data.Error);
+         setLoading(false)
+         return
+      }
       setMovieResults(data?.Search)
       setTotalPage(Math.ceil(data?.totalResults / 10))
     }
@@ -53,9 +60,15 @@ function App() {
 
   const getMovie = async (movieId) => {
     setLoading(true)
+    setNotFound('')
     const { data, error } = await fetchMovie(movieId);
 
     if (data) {
+      if(data.Error) {
+        setNotFound(data.Error);
+        setLoading(false)
+        return
+     }
       setMovie(data)
       setShowPop(true);
     }
@@ -73,7 +86,6 @@ function App() {
     handleSearch(page)
   }
 
-  const notFound = movieResults.Error;
 
   if (error) return 'error';
 
@@ -93,11 +105,11 @@ function App() {
         <>
           <div className='movies__header'>
             <h3>Movies</h3>
-            <Pagination
+           {movieResults.length > 1 && <Pagination
               page={page}
               handlePageClick={handlePageClick}
               totalPage={totalPage}
-            />
+            />}
           </div>
           <div className='movies'>
 

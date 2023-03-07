@@ -1,5 +1,8 @@
-const DefaultImage = ({ poster }) => <div className='fallback-img'>{poster}</div>
-const LoadedImage = ({ poster }) => <img src={poster} alt="movie poster" />
+import PropTypes from 'prop-types'
+
+
+const DefaultImage = ({ poster }) => <div className='fallback-img' data-testid="fallback-image">{poster}</div>
+const LoadedImage = ({ poster }) => <img src={poster} alt="movie poster" data-testid="loaded-image"/>
 
 export function Movie({ movieResults, onclick }) {
     const poster =
@@ -8,7 +11,7 @@ export function Movie({ movieResults, onclick }) {
             : <LoadedImage poster={movieResults.Poster} />;
 
     return (
-        <div className='card' onClick={onclick}>
+        <div className='card' onClick={onclick} data-testid="movie-card">
             {poster}
             <footer className="card__footer">
                 <h3 className="card__title">{movieResults.Title}</h3>
@@ -20,4 +23,9 @@ export function Movie({ movieResults, onclick }) {
         </div>
 
     )
+}
+
+Movie.propTypes = {
+    movieResults: PropTypes.object,
+    onclick: PropTypes.func
 }
