@@ -1,4 +1,4 @@
-export default function NotFound({notFound}) {
+export function NotFound({notFound}) {
     return (
         <div>{notFound}</div>
     )

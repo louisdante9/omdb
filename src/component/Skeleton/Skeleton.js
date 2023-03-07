@@ -1,15 +1,15 @@
-export default function Skeleton() {
+export function Skeleton() {
     return (
-        <div className="movie-result">
+        <div >
             <div className='poster-image-placeholder'>
                 <img alt="" className='skeleton' />
             </div>
             <div className='movie-details-placeholder'>
                 <div className='skeleton'></div>
                 <div className='skeleton'></div>
-                <div className='skeleton'></div>
-                <div className='skeleton'></div>
+                
             </div>
         </div>
+        
     )
 }

@@ -1,7 +1,7 @@
-import useMediaQuery from "../hooks/useMediaQuery";
-import { Button } from "./Button";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import { Button } from "../Button";
 
-export default function Search({ formData: { title, year }, handleChange, handldeSubmit }) {
+export function Search({ formData: { title, year }, handleChange, handldeSubmit }) {
     const matches = useMediaQuery('(min-width:700px)')
     return (
         <div className='search'>
